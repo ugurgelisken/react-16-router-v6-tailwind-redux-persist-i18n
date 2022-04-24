@@ -6,6 +6,7 @@ const LanguageChanger = () => {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     localStorage.setItem("language", lng);
+    window.location.reload(false);
   };
 
   const languages = [

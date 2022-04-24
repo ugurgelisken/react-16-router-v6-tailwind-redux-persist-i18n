@@ -11,9 +11,9 @@ import HayliLogo from "./../assets/images/layli_logo.webp";
 const Header = () => {
   const { t } = useTranslation();
   return (
-    <div className="h-60 absolute top-10 left-0 right-0 z-10">
-      <div className="navbar xl:w-5/6 lg:w-3/4 mx-auto">
-        <div className="navbar-start">
+    <div className="h-60 absolute top-10 left-0 right-0 z-100">
+      <div className="navbar xl:w-5/6 lg:w-3/4 mx-auto ">
+        <div className="navbar-start ">
           <div className="dropdown">
             <label
               tabIndex="0"
