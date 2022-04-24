@@ -11,7 +11,7 @@ import HayliLogo from "./../assets/images/layli_logo.webp";
 const Header = () => {
   const { t } = useTranslation();
   return (
-    <div className="h-60 absolute top-10 left-0 right-0 z-100">
+    <div className="h-60 absolute top-10 left-0 right-0 z-10">
       <div className="navbar xl:w-5/6 lg:w-3/4 mx-auto ">
         <div className="navbar-start ">
           <div className="dropdown">
@@ -45,7 +45,7 @@ const Header = () => {
               <button>{t("create")}</button>
             </li>
             <li>
-              <button>{t("explore")}</button>
+              <button className="mx-2">{t("explore")}</button>
             </li>
             <li>
               <button>{t("dashboard")}</button>

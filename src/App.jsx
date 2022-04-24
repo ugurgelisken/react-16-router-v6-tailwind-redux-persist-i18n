@@ -59,7 +59,7 @@ const createRoutesWithRole = (role) => {
 };
 
 function App() {
-  return <div>{createRoutesWithRole("enterprise")}</div>;
+  return createRoutesWithRole("enterprise");
 }
 
 const Layout = ({ children }) => {

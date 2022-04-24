@@ -5,18 +5,27 @@ import HeaderBackgroundIMG from "./../assets/images/header_background.jpg";
 const LandingPage = () => {
   return (
     <div>
-      <div className="bg-primary h-[800px]" style={{backgroundImage: `url(${HeaderBackgroundIMG})`, backgroundPosition: 'right bottom', backgroundRepeat: 'no-repeat'}}>
+      <div
+        className="bg-primary h-[800px]"
+        style={{
+          backgroundImage: `url(${HeaderBackgroundIMG})`,
+          backgroundPosition: "right bottom",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="w-screen  text-center grid col-1 mt-[200px] text-white z-10 absolute h-fit">
           <h1 className="mx-auto lg:text-7xl md:text-5xl text-4xl font-bold">
-            {t('header.slogan.1')}
+            {t("header.slogan.1")}
           </h1>
           <h1 className="mx-auto lg:text-7xl md:text-5xl text-4xl font-bold">
-            {t('header.slogan.2')}
+            {t("header.slogan.2")}
           </h1>
           <h2 className="mx-auto lg:text-4xl md:text-3xl text-2xl font-bold mt-8">
-            {t('header.slogan.3')}
+            {t("header.slogan.3")}
           </h2>
-          <button className="animate-bounce btn btn-info btn-lg w-max justify-self-center mt-16 ">{t('explore')}</button>
+          <button className="animate-bounce btn btn-info btn-lg w-max justify-self-center mt-16 ">
+            {t("explore")}
+          </button>
         </div>
       </div>
       <div className="mx-auto p-8 h-fit bg-slate-50 ">

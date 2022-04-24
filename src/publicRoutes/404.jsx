@@ -8,12 +8,12 @@ const _404 = () => {
   useEffect(() => {
     const timeoutID = window.setTimeout(() => {
       navigate("/");
-    }, 200000);
+    }, 2000);
     return () => window.clearTimeout(timeoutID);
   }, [history]);
 
   return (
-    <div className="mt-40 bg-black">
+    <div className="mt-40 bg-white">
       <div className="">
         <img src={HayliSpace} />
         Redirecting...
