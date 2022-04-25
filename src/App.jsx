@@ -24,7 +24,7 @@ const createRoutesWithRole = (role) => {
   if (role === "admin") {
     return (
       <Routes>
-        <Route exact path="/" element={<Admin />} />
+        <Route index exact path="/" element={<Admin />} />
         <Route exact path="/admin" element={<Admin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
@@ -35,7 +35,7 @@ const createRoutesWithRole = (role) => {
     return (
       <Layout>
         <Routes>
-          <Route exact path="/" element={<LandingPage />} />
+          <Route index exact path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
@@ -48,7 +48,7 @@ const createRoutesWithRole = (role) => {
     return (
       <Layout>
         <Routes>
-          <Route exact path="/" element={<LandingPage />} />
+          <Route index exact path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />

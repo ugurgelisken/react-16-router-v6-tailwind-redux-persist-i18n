@@ -1,15 +1,22 @@
+import { useSelector } from "react-redux";
 import LanguageChanger from "./LanguageChanger";
 import { MenuIcon } from "@heroicons/react/solid";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle, faWallet } from '@fortawesome/free-solid-svg-icons';
- 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle, faWallet } from "@fortawesome/free-solid-svg-icons";
+
 import { useTranslation } from "react-i18next";
-import "./../i18n";
 
 import HayliLogo from "./../assets/images/layli_logo.webp";
 
 const Header = () => {
   const { t } = useTranslation();
+
+  const { activePage } = useSelector((state) => state.application);
+
+  if (activePage === null) {
+    return null;
+  }
+
   return (
     <div className="h-60 absolute top-10 left-0 right-0 z-10">
       <div className="navbar xl:w-5/6 lg:w-3/4 mx-auto ">
@@ -37,7 +44,6 @@ const Header = () => {
             </ul>
           </div>
           <img src={HayliLogo} />
-        
         </div>
 
         <div className="navbar-center hidden lg:flex">
@@ -57,11 +63,13 @@ const Header = () => {
         <div className="navbar-end">
           <div className="flex-none">
             <label tabIndex="0" className="btn btn-ghost">
-             
-               <FontAwesomeIcon icon={faUserCircle} className="h-8 w-8 text-white" />
+              <FontAwesomeIcon
+                icon={faUserCircle}
+                className="h-8 w-8 text-white"
+              />
             </label>
             <label tabIndex="0" className="btn btn-ghost mx-2">
-                <FontAwesomeIcon icon={faWallet} className="h-8 w-8 text-white" />
+              <FontAwesomeIcon icon={faWallet} className="h-8 w-8 text-white" />
             </label>
             <LanguageChanger />
           </div>

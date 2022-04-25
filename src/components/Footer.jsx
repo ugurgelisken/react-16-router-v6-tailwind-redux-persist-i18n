@@ -1,4 +1,12 @@
+import { useSelector } from "react-redux";
+
 const Footer = () => {
+  const { activePage } = useSelector((state) => state.application);
+
+  if (activePage === null) {
+    return null;
+  }
+
   return (
     <footer className="footer footer-center p-4 bg-stone-200 text-stone-800">
       <div className="grid grid-flow-col gap-4">
