@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import LanguageChanger from "./LanguageChanger";
 import { MenuIcon } from "@heroicons/react/solid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,13 +9,6 @@ import HayliLogo from "./../assets/images/layli_logo.webp";
 
 const Header = () => {
   const { t } = useTranslation();
-
-  const { activePage } = useSelector((state) => state.application);
-
-  if (activePage === null) {
-    return null;
-  }
-
   return (
     <div className="h-60 absolute top-10 left-0 right-0 z-10">
       <div className="navbar xl:w-5/6 lg:w-3/4 mx-auto ">

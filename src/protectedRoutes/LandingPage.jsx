@@ -5,9 +5,7 @@ import { t } from "i18next";
 import HeaderBackgroundIMG from "./../assets/images/header_background.jpg";
 
 const LandingPage = () => {
-  const { activePage } = useSelector((state) => state.application);
-
-  document.title = `${t("title")} | ${t("pages.landing_page")}`;
+  document.title = `${t("title")} | ${t("page.landing_page")}`;
   const dispatch = useDispatch();
   dispatch(setActivePage("landing-page"));
 
