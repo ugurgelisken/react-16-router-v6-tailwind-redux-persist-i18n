@@ -1,35 +1,31 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 // SLICE
 
 const applicationSlice = createSlice({
-  name: "login",
+  name: 'application',
   initialState: {
     isLoading: false,
     isServiceActive: null,
-    isMenuOpen: true,
+    isWalletOpen: true,
     activePage: null,
-    pageTitle: null,
     isLogin: false,
     jwt: null,
-    user: null,
+    userRole: null,
+    language: null,
   },
   reducers: {
     login: (state, action) => {
       state.isLogin = true;
       state.jwt = action.payload.token;
-      state.user = action.payload;
+      state.userRole = action.payload.userRole;
     },
     logout: (state) => {
       state.isLogin = false;
       state.jwt = null;
-      state.user = null;
     },
-    menu: (state) => {
-      state.isMenuOpen = !state.isMenuOpen;
-    },
-    title: (state, action) => {
-      state.pageTitle = action.payload;
+    wallet: (state) => {
+      state.isWalletOpen = !state.isWalletOpen;
     },
     activePage: (state, action) => {
       state.activePage = action.payload;
@@ -40,17 +36,21 @@ const applicationSlice = createSlice({
     loading: (state, action) => {
       state.isLoading = action.payload;
     },
+    language: (state, action) => {
+      state.language = action.payload;
+    },
   },
 });
 
 export const {
   login,
   logout,
-  menu,
+  wallet,
   title,
   activePage,
   serviceActive,
   loading,
+  language,
 } = applicationSlice.actions;
 
 export default applicationSlice.reducer;
@@ -65,12 +65,8 @@ export const setLogout = () => async (dispatch) => {
   dispatch(logout());
 };
 
-export const toggleMenu = () => async (dispatch) => {
-  dispatch(menu());
-};
-
-export const setPageTitle = (value) => async (dispatch) => {
-  dispatch(title(value));
+export const togglewallet = () => async (dispatch) => {
+  dispatch(wallet());
 };
 
 export const setActivePage = (value) => async (dispatch) => {
@@ -83,4 +79,8 @@ export const setServiceActive = (value) => async (dispatch) => {
 
 export const setLoading = (value) => async (dispatch) => {
   dispatch(loading(value));
+};
+
+export const setLanguage = (value) => async (dispatch) => {
+  dispatch(language(value));
 };

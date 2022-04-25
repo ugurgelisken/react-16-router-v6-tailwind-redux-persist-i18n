@@ -1,12 +1,20 @@
+import { useSelector, useDispatch } from "react-redux";
+import { setLanguage } from "./../store/application.store";
 import { useTranslation } from "react-i18next";
 import { TranslateIcon } from "@heroicons/react/solid";
 
 const LanguageChanger = () => {
+
+  const { language } = useSelector((state) => state.application);
+  
+  const dispatch = useDispatch();
+
   const { i18n } = useTranslation();
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     localStorage.setItem("language", lng);
-    window.location.reload(false);
+     dispatch(setLanguage(lng));
+   // window.location.reload(false);
   };
 
   const languages = [

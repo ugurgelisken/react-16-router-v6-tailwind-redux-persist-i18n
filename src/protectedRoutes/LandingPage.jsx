@@ -9,6 +9,8 @@ const LandingPage = () => {
   const dispatch = useDispatch();
   dispatch(setActivePage("landing-page"));
 
+  useSelector((state) => state.application);
+
   return (
     <div>
       <div

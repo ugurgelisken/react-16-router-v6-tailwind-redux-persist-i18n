@@ -13,11 +13,22 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 /*
-Home
-Explore
-Create
-User Profile
+-> admin
+Admin
+
+-> user
 LandingPage
+Explore
+Create (Collection, NFT, Gift NFT)
+User Profile (details)
+NFTs (sell, gift, details)
+
+-> + enterprise
+Contract
+
+Components ->
+Wallet
+
 */
 
 const createRoutesWithRole = (role) => {
