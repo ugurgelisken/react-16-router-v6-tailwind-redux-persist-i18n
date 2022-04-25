@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import React from "react";
 import NotFound from "./publicRoutes/404";
 
@@ -33,27 +33,27 @@ const createRoutesWithRole = (role) => {
 
   if (role === "enterprise") {
     return (
-      <Layout>
-        <Routes>
+      <Routes>
+        <Route path="/" element={<Layout />}>
           <Route index exact path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
+        </Route>
+      </Routes>
     );
   }
 
   if (role === "user") {
     return (
-      <Layout>
-        <Routes>
+      <Routes>
+        <Route path="/" element={<Layout />}>
           <Route index exact path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
+        </Route>
+      </Routes>
     );
   }
 };
@@ -62,11 +62,11 @@ function App() {
   return createRoutesWithRole("enterprise");
 }
 
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
     <div data-theme="hayli">
       <Header />
-      <div>{children}</div>
+      <Outlet />
       <Footer />
     </div>
   );
